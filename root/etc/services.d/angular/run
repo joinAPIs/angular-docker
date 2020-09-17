@@ -5,6 +5,8 @@ location=`find /app -name "angular.json" -maxdepth 2`
 if [ -z "$location" ]; then
 	cd /app || exit
 	mv /defaults/helloworld /app/
+	cd /app/helloworld
+	npm install
 else
 	cd ${location:0:-12} || exit
 fi
