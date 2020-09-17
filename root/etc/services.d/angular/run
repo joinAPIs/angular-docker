@@ -4,11 +4,9 @@ cd /app || exit
 
 if [ ! -f "/app/angular.json" ]; then
 	npm install
-	ng update
-	npm update
-	npm install -g typescript
-	npm install -g @angular/cli
-	npm install -g @angular-devkit/build-angular
+	npm install typescript
+	npm install @angular/cli
+	npm install @angular-devkit/build-angular
 
 	ng new my-angular-app
 	shopt -s dotglob
