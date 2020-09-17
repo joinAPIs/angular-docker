@@ -4,14 +4,9 @@ cd /app || exit
 
 if [ ! -f "/app/angular.json" ]; then
 	npm install
-	npm install typescript
-	npm install @angular/cli
-	npm install @angular-devkit/build-angular
-
-	ng new my-angular-app
-	shopt -s dotglob
-	mv ./my-angular-app/* ./
-	rm -rf ./my-angular-app
+	ng new test
+	mv ./test/* ./
+	rm -rf ./test
 fi
 
 exec \

@@ -24,6 +24,11 @@ RUN \
         nodejs-current \
         npm \
         yarn && \
+    echo "**** install angular ****" && \
+    npm install && \
+	npm install -g typescript && \
+	npm install -g @angular/cli && \
+	npm install -g @angular-devkit/build-angular && \
     echo "**** cleanup ****" && \
     apk del --purge build-dependencies && \
     rm -rf /root/.cache /tmp/*
