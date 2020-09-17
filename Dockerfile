@@ -25,10 +25,10 @@ RUN \
         npm \
         yarn && \
     echo "**** install angular ****" && \
-    npm install && \
+    cd /defaults && \
 	npm install -g typescript && \
 	npm install -g @angular/cli && \
-	npm install -g @angular-devkit/build-angular && \
+    ng new helloworld && \
     echo "**** cleanup ****" && \
     apk del --purge build-dependencies && \
     rm -rf /root/.cache /tmp/*

@@ -1,13 +1,12 @@
 #!/usr/bin/with-contenv bash
 
-cd /app || exit
+location=`find /app -name "angular.json" -maxdepth 2`
 
-if [ ! -f "/app/angular.json" ]; then
-	npm install
-	ng new test
-	mv ./test/* ./
-	rm -rf ./test
+if [ -z "$location" ]; then
+	cd /app || exit
+	mv /defaults/helloworld /app/
+else
+	cd ${location:0:-12} || exit
 fi
 
-exec \
-	s6-setuidgid abc /usr/bin/ng serve
+exec /usr/bin/ng serve
