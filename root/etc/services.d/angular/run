@@ -11,4 +11,4 @@ else
 	cd ${location:0:-12} || exit
 fi
 
-exec /usr/bin/ng serve
+exec /usr/bin/ng serve --host 0.0.0.0 --disableHostCheck true
